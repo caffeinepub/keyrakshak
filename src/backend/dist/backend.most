@@ -1,0 +1,51 @@
+// Version: 1.0.0
+type FinderMessage__496785255 =
+  {
+    finderPhone : ?Text;
+    id : Nat;
+    keyId : KeyId__566067309;
+    messageText : Text;
+    sentAt : Timestamp__551826535
+  };
+type KeyId__212110238 = KeyId__558429330;
+type KeyId__558429330 = Text;
+type KeyId__566067309 = KeyId__558429330;
+type KeyType__357535541 = {#Bike; #Car; #Home; #Office};
+type Key__91509980 =
+  {
+    createdAt : Timestamp__1071681664;
+    id : KeyId__212110238;
+    keyType : KeyType__357535541;
+    var lostMode : Bool;
+    name : Text;
+    owner : Principal
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Owner__357098855 =
+  {var mobile : Text; name : Text; principal : Principal};
+type Timestamp__1071681664 = Timestamp__301639476;
+type Timestamp__301639476 = Int;
+type Timestamp__551826535 = Timestamp__301639476;
+actor {
+  stable keys :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Key__91509980]];
+      var elementIndex : Nat__490723111
+    };
+  stable messages :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?FinderMessage__496785255]];
+      var elementIndex : Nat__490723111
+    };
+  stable nextKeyCounter : {var value : Nat};
+  stable nextMsgId : {var value : Nat};
+  stable owners :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Owner__357098855]];
+      var elementIndex : Nat__490723111
+    }
+};

@@ -1,0 +1,42 @@
+type Timestamp = int;
+type PublicKeyInfo = 
+ record {
+   id: KeyId;
+   keyType: KeyType;
+   lostMode: bool;
+   name: text;
+ };
+type OwnerKeyInfo = 
+ record {
+   createdAt: Timestamp;
+   id: KeyId;
+   keyType: KeyType;
+   lostMode: bool;
+   name: text;
+ };
+type KeyType = 
+ variant {
+   Bike;
+   Car;
+   Home;
+   Office;
+ };
+type KeyId = text;
+type FinderMessage = 
+ record {
+   finderPhone: opt text;
+   id: nat;
+   keyId: KeyId;
+   messageText: text;
+   sentAt: Timestamp;
+ };
+service : {
+  addKey: (name: text, keyType: KeyType) -> (text);
+  getKeyInfo: (keyId: text) -> (opt PublicKeyInfo) query;
+  getMessages: (keyId: text) -> (vec FinderMessage) query;
+  getMyKeys: () -> (vec OwnerKeyInfo) query;
+  registerOwner: (name: text, mobile: text) -> ();
+  sendFinderMessage: (keyId: text, messageText: text, finderPhone:
+   opt text) -> ();
+  setLostMode: (keyId: text, lostMode: bool) -> ();
+}

@@ -1,0 +1,21 @@
+{
+  "overview": "KeyRakshak is a lost key recovery platform powered by QR codes. Owners register their keys, get unique QR code tags, and can activate Lost Mode to help finders return keys safely. Finders who scan a QR code can contact the owner anonymously — without ever seeing their phone number.",
+  "features": [
+    "Key registration with unique QR code (KR1001, KR1002...)",
+    "Lost Mode toggle with Reward Offered badge",
+    "Public finder scan page — no login required",
+    "Anonymous messaging: finder contacts owner without seeing their number",
+    "Owner dashboard to manage all keys and view finder messages",
+    "Mobile-first responsive design"
+  ],
+  "category": "productivity",
+  "tags": [
+    "qr-code",
+    "lost-and-found",
+    "keys",
+    "security",
+    "mobile",
+    "india"
+  ],
+  "last_updated": "2026-04-08T19:07:49.321Z"
+}
